@@ -1,0 +1,19 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(75, 75, 75);
+}
+
+a {
+  color: #000000;
+}
+
+img-box {
+  position: center;
+}
+
+img {
+  max-width: 80%;
+  height: 700px;
+  width: auto; 
+}

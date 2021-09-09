@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  h1= "Rainbow 6 Siege Callouts"
+  h4= "Interactive Siege callouts aid to put on your second monitor when in game"
+  h4= "Created by: https://github.com/henrygoodman"
+  h4= "Maps source: https://steamcommunity.com/sharedfiles/filedetails/?id=2071634544"
+  h2= "Select your desired map"
+  form(method="POST" action="map_selected") 
+    select(name="map" onchange="this.form.submit()")
+      option(value="")=              "Select map"
+      option(value="Bank")=             "Bank"
+      option(value="Border")=           "Border"
+      option(value="Chalet")=           "Chalet"
+      option(value="Clubhouse")=        "Clubhouse"
+      option(value="Coastline")=        "Coastline"
+      option(value="Consulate")=        "Consulate"
+      option(value="Kafe")=             "Kafe Dostovevsky"
+      option(value="Kanal")=            "Kanal"
+      option(value="Oregon")=           "Oregon"
+      option(value="ThemePark")=        "Theme Park"
+      option(value="Villa")=            "Villa"
+
+  
+  if (map)
+    h2= "Selected: " + map
+    - var floorNames = ["Basement", "Ground Floor", "Top Floor"]
+    - for (var i = 0; i < floorCount; i++)
+          if (floorCount == 2) 
+            h2=floorNames[i+1]
+          else 
+            h2=floorNames[i]
+          div(class="img-box")
+          img(src=images[i])
+
+  div(style="margin:50px")
+    button
+      a(href="#top")="Back to top"
